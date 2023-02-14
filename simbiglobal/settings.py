@@ -30,6 +30,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','simbiglobal-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['simbiglobal-production.up.railway.app',]
 
 
 # Application definition

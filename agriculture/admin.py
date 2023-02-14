@@ -60,7 +60,8 @@ class RevenueAdmin(ExportActionMixin, admin.ModelAdmin):
             base_formats.XLS,
         )
         return [f for f in formats if f().can_export()]
-
+    
+    
 
 # admin.site.register(Category, CategoryAdmin)
 # admin.site.register(Subcategory, SubcategoryAdmin)

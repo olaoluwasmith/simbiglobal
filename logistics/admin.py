@@ -62,7 +62,7 @@ class RevenueAdmin(ExportActionMixin, admin.ModelAdmin):
         return [f for f in formats if f().can_export()]
 
 
-admin.site.register(CategoryLog, CategoryAdmin)
-admin.site.register(SubcategoryLog, SubcategoryAdmin)
+# admin.site.register(CategoryLog, CategoryAdmin)
+# admin.site.register(SubcategoryLog, SubcategoryAdmin)
 admin.site.register(Expenses, ExpenseAdmin)
 admin.site.register(Revenue, RevenueAdmin)

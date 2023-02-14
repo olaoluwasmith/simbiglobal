@@ -19,7 +19,7 @@ img {
     margin: 9px;
 }
 
-caption {
+.module caption {
     background: linear-gradient(90deg,
         rgba(11, 28, 65, 1) 5%,
         rgb(21, 21, 106) 54%,

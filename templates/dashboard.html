@@ -1,0 +1,372 @@
+{% extends "index.html" %}
+{% load static %}
+{% load humanize %}
+{% block title %} Dashboard | Simbi Global Resources LTD {% endblock title %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="container py-5">
+        <div class="mb-5">
+            <h3>Dashboard</h3>
+        </div>
+
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="agric-tab" data-bs-toggle="tab" data-bs-target="#agric-tab-pane" type="button" 
+                role="tab" aria-controls="agric-tab-pane" aria-selected="true">Agriculture</button>
+            <button class="nav-link" id="log-tab" data-bs-toggle="tab" data-bs-target="#log-tab-pane" type="button" role="tab" 
+                aria-controls="log-tab-pane" aria-selected="false">Logistics</button>
+            <button class="nav-link" id="mer-tab" data-bs-toggle="tab" data-bs-target="#mer-tab-pane" type="button" role="tab"
+                aria-controls="mer-tab-pane" aria-selected="false">Merchandise</button>
+        </div>
+
+        <div class="tab-content" id="nav-tabContent">
+            <!-- Agric tab page -->
+            <div class="tab-pane fade show active" id="agric-tab-pane" role="tabpanel" aria-labelledby="agric-tab" tabindex="0">
+                <div class="my-4">
+                    <h5>Today, {% now 'D, d-m-Y' %}</h5>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Expense</h5>
+                            <hr>
+                            <h6 class="pro">&#8358<span>{{ total_expense_today }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Revenue</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_revenue_today }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Profit</h5>
+                            <hr>
+                            <h6>&#8358<span class="profit">{{ profit_today }}</span></h6>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            
+                <div class="my-4">
+                    <h5>This Week</h5>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Expense</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_expense_week }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Revenue</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_revenue_week }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Profit</h5>
+                            <hr>
+                            <h6>&#8358<span class="profit">{{ profit_week }}</span></h6>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            
+                <div class="my-4">
+                    <h5>This Month</h5>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Expense</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_expense_month }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Revenue</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_revenue_month }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Profit</h5>
+                            <hr>
+                            <h6>&#8358<span class="profit">{{ profit_month }}</span></h6>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="my-4">
+                    <h5>This Year - {% now 'Y' %}</h5>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Expense</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_expense_year }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Revenue</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_revenue_year }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Profit</h5>
+                            <hr>
+                            <h6>&#8358<span class="profit">{{ profit_year }}</span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Logistics tab page -->
+            <div class="tab-pane fade" id="log-tab-pane" role="tabpanel" aria-labelledby="log-tab" tabindex="0">
+                <div class="my-4">
+                    <h5>Today, {% now 'D, d-m-Y' %}</h5>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Expense</h5>
+                            <hr>
+                            <h6 class="pro">&#8358<span>{{ total_expense_log_today }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Revenue</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_revenue_log_today }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Profit</h5>
+                            <hr>
+                            <h6>&#8358<span class="profit">{{ profit_log_today }}</span></h6>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="my-4">
+                    <h5>This Week</h5>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Expense</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_expense_log_week }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Revenue</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_revenue_log_week }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Profit</h5>
+                            <hr>
+                            <h6>&#8358<span class="profit">{{ profit_log_week }}</span></h6>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="my-4">
+                    <h5>This Month</h5>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Expense</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_expense_log_month }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Revenue</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_revenue_log_month }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Profit</h5>
+                            <hr>
+                            <h6>&#8358<span class="profit">{{ profit_log_month }}</span></h6>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="my-4">
+                    <h5>This Year - {% now 'Y' %}</h5>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Expense</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_expense_log_year }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Revenue</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_revenue_log_year }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Profit</h5>
+                            <hr>
+                            <h6>&#8358<span class="profit">{{ profit_log_year }}</span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Merchandise tab page -->
+            <div class="tab-pane fade" id="mer-tab-pane" role="tabpanel" aria-labelledby="mer-tab" tabindex="0">
+                <div class="my-4">
+                    <h5>Today, {% now 'D, d-m-Y' %}</h5>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Expense</h5>
+                            <hr>
+                            <h6 class="pro">&#8358<span>{{ total_expense_mer_today }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Revenue</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_revenue_mer_today }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Profit</h5>
+                            <hr>
+                            <h6>&#8358<span class="profit">{{ profit_mer_today }}</span></h6>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            
+                <div class="my-4">
+                    <h5>This Week</h5>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Expense</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_expense_mer_week }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Revenue</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_revenue_mer_week }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Profit</h5>
+                            <hr>
+                            <h6>&#8358<span class="profit">{{ profit_mer_week }}</span></h6>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            
+                <div class="my-4">
+                    <h5>This Month</h5>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Expense</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_expense_mer_month }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Revenue</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_revenue_mer_month }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Profit</h5>
+                            <hr>
+                            <h6>&#8358<span class="profit">{{ profit_mer_month }}</span></h6>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            
+                <div class="my-4">
+                    <h5>This Year - {% now 'Y' %}</h5>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Expense</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_expense_mer_year }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Revenue</h5>
+                            <hr>
+                            <h6>&#8358<span>{{ total_revenue_mer_year }}</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card p-2">
+                            <h5>Profit</h5>
+                            <hr>
+                            <h6>&#8358<span class="profit">{{ profit_mer_year }}</span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>   
+    </div>
+</div>
+
+{% block javascript %}
+    
+{% endblock javascript %}
+{% endblock content %}

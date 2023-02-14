@@ -1,0 +1,40 @@
+/* Global styles */
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg, 
+    rgba(11,28,65,1) 5%,
+    rgb(21, 21, 106) 54%,
+    rgb(6, 32, 73) 100%,
+    rgba(12,38,89,1) 100%);
+    color: rgb(207, 207, 236);
+}
+
+.service,
+.about,
+.contact,
+.dashboard {
+    min-height: 85%;
+}
+
+.service, .about, .contact, .dashboard {
+    background-color: rgb(183, 192, 227);
+    color: rgb(8, 8, 37);
+}
+
+.hero-header {
+    color: white;
+}
+
+a {
+    color: rgb(27, 12, 190);
+    text-decoration: none;
+}
+
+/* .text-red {
+    color: red;
+} */

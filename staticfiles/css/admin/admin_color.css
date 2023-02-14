@@ -1,0 +1,20 @@
+#header {
+    background: linear-gradient(90deg, 
+    rgba(11,28,65,1) 5%,
+    rgb(21, 21, 106) 54%,
+    rgb(6, 32, 73) 100%,
+    rgba(12,38,89,1) 100%);
+    color: rgb(207, 207, 236);
+}
+
+#branding {
+    font-size: x-large;
+}
+
+div.breadcrumbs {
+    background: rgba(11,28,65,1);
+}
+
+img {
+    margin: 9px;
+}
